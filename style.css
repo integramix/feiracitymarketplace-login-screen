@@ -1,0 +1,446 @@
+/* Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;900&display=swap');
+
+/* Variaveis */
+:root {
+    --font-family-1: 'Roboto', 'Arial', 'sans-serif';
+    --orange: #f7a62e;
+    --white: #fff;
+    --transition: all .5s ease;
+}
+
+/* CSS RESET */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family-1);
+}
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Lancaster.io */
+.fbox {
+    display: flex;
+}
+.fbox_column {
+    flex-direction: column;
+}
+.fbox_align_center {
+    align-items: center;
+}
+.fbox_space_between {
+    justify-content: space-between;
+}
+.fbox_center {
+    justify-content: center;
+}
+.fbox_right {
+    justify-content: flex-end;
+}
+.fbox_left {
+    justify-content: flex-start;
+}
+.fbox_wrap {
+    flex-wrap: wrap;
+}
+
+/* mainLogin */
+.mainLogin {
+    width: 100%;
+    height: 100vh;
+    background: var(--white);
+    overflow: hidden;
+    position: relative;
+    clip-path: circle(0% at 50% 50%);
+    animation: 2s showMainLogin forwards;
+}
+
+/* Orange Container */
+.orangeContainer {
+    background: url(img/bg.png);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip-path: inset(0 60% 0 0 round 0);
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+    transition: all 1s ease;
+    animation: 20s infinite bgPositionOrangeContainer linear;
+}
+.orangeContainer.login_screen {
+    animation: .8s container_swipe_to_login forwards linear, 20s infinite bgPositionOrangeContainer linear;
+}
+.orangeContainer.ra_screen {
+    animation: .8s container_swipe_to_back forwards linear, 20s infinite bgPositionOrangeContainer linear;
+}
+.orangeContainer .left {
+    width: 40%;
+    height: 100%;
+    position: relative;
+}
+.msgCentered {
+    width: 250px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    color: var(--white);
+}
+.left .msgCentered.swiped {
+    animation: .4s hideTextToLeft forwards;
+}
+.left .msgCentered.swipe {
+    opacity: 0;
+    margin-left: -400px;
+    animation: .4s showToRight forwards;
+    animation-delay: .6s;
+}
+.right .msgCentered {
+    opacity: 0;
+    margin-right: -400px;
+}
+.right .msgCentered.swiped {
+    animation: .4s hideTextToRight forwards;
+}
+.right .msgCentered.swipe {
+    animation: .4s showTextToLeft forwards;
+    animation-delay: .6s;
+}
+.msgCentered h2 {
+    font-size: 40px;
+    margin: 0;
+    text-align: center;
+    font-weight: 800;
+}
+.msgCentered span {
+    font-weight: 400;
+    display: block;
+    margin: 30px 0 79px;
+    text-align: center;
+}
+.buttonContainer {
+    width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    margin-top: 60px;
+    z-index: 1;
+}
+.buttonContainer.login_screen {
+    animation: .8s button_container_swip_to_login forwards;
+    animation-timing-function: linear;
+}
+.buttonContainer.ra_screen {
+    animation: .8s button_container_swip_to_back forwards;
+    animation-timing-function: linear;
+}
+.orangeContainer .right {
+    width: 40%;
+    height: 100%;
+    position: relative;
+}
+
+/* Powered By */
+.poweredBy {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--white);
+}
+.poweredBy span {
+    font-size: 13px;
+}
+.poweredBy svg {
+    width: 15px;
+    margin-left: 10px;
+    fill: var(--white);
+}
+
+/* Forms */
+.formsContainer {
+
+}
+.formsContainer .left {
+    width: 60%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+}
+.formsContainer .left.visible {
+    animation: .8s showLoginForm forwards;
+    animation-delay: .3s;
+}
+.formsContainer .left.hidden {
+    animation: .8s hideLoginForm forwards;
+}
+.formsContainer .right {
+    width: 60%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.formsContainer .right.visible {
+    opacity: 0;
+    visibility: hidden;
+    right: 300px;
+    animation: .8s showAccessRequestForm forwards;
+    animation-delay: .3s;
+}
+.formsContainer .right.hidden {
+    animation: .8s hideAccessRequestForm forwards;
+}
+.formsContainer h2 {
+    color: var(--orange);
+    margin: 0 0 10px;
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+.formsContainer .iconsSociais {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.formsContainer .iconsSociais a {
+    display: block;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #e8e8e8;
+    margin-right: 5px;
+    border-radius: 50px;
+    position: relative;
+    transition: var(--transition);
+}
+.formsContainer .iconsSociais a:hover {
+    border-color: var(--orange);
+}
+.formsContainer .iconsSociais a i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: var(--transition);
+    color: #000;
+}
+.formsContainer .iconsSociais a:hover i {
+    color: var(--orange);
+}
+.formsContainer form {
+    max-width: 330px;
+    width: 100%;
+}
+.formsContainer form span {
+    color: #abb3b6;
+    font-weight: 400;
+    font-size: 14px;
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.formsContainer form .input_item {
+    position: relative;
+    margin-bottom: 10px;
+}
+.formsContainer form .input_item i {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    color: #777;
+}
+.formsContainer form input {
+    width: 100%;
+    border: 1px solid transparent;
+    background: #eee;
+    color: #777;
+    font-size: 15px;
+    padding: 15px 40px;
+    font-weight: 400;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+.formsContainer form input:focus {
+    background: transparent;
+    border-color: #eee;
+}
+.formsContainer form input:focus::placeholder {
+    color: #eee;
+}
+.formsContainer form input::placeholder {
+    color: #777;
+    transition: var(--transition);
+}
+.formsContainer form .recoveryPass {
+    display: inline-block;
+    margin: 10px auto 20px;
+    padding-bottom: 5px;
+    letter-spacing: 2px;
+    font-size: 13px;
+    border-bottom: 1px solid var(--orange);
+    transition: var(--transition);
+}
+.formsContainer form .recoveryPass:hover {
+    color: #777;
+}
+.formsContainer form button[type="submit"] {
+    width: 185px;
+    border: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 15px 20px;
+    border-radius: 50px;
+    background: var(--orange);
+    color: var(--white);
+    letter-spacing: 3px;
+    font-weight: 500;
+    font-family: var(--font-family-1);
+    margin: 10px auto 0;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.formsContainer form button[type="submit"]:hover {
+    opacity: .5;
+}
+.mobile_swipe_screen {
+    margin-top: 40px;
+    color: #222;
+    font-size: 13px;
+    font-weight: 500;
+    display: none;
+}
+.mobile_swipe_screen span {
+    color: var(--orange);
+}
+.swipe_screen {
+    cursor: pointer;
+}
+.mobile_powered_by {
+    position: relative;
+    margin-top: 50px;
+    width: 100%;
+    height: 2px;
+    display: none;
+}
+.mobile_powered_by .poweredBy {
+    top: 0;
+    color: #000;
+}
+.mobile_powered_by .poweredBy svg {
+    width: 15px;
+    margin-left: 10px;
+    fill: #000;
+}
+
+/* Botoes */
+.btn_001 {
+    max-width: 250px;
+    width: 100%;
+    color: var(--orange);
+    padding: 21.5px 15px;
+    border-radius: 40px;
+    border: 1px solid transparent;
+    background: var(--white);
+    display: block;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: 500;
+    margin: auto;
+    position: relative;
+    transition: var(--transition);
+    overflow: hidden;
+}
+.btn_001.login_screen {
+    max-width: auto;
+    animation: .8s button_swip_to_login forwards;
+    animation-timing-function: linear;
+}
+.btn_001.ra_screen {
+    max-width: auto;
+    animation: .8s button_swip_to_back forwards;
+    animation-timing-function: linear;
+}
+.btn_001 .text_visible {
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    margin-top: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.btn_001 .text_hidden {
+    width: 100%;
+    display: block;
+    position: absolute;
+    margin-top: 2px;;
+    left: -100%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+}
+.btn_001 .text_visible.swiped {
+    animation: .4s swipe_visible_text_right forwards;
+    animation-timing-function: linear;
+    animation-delay: .4s;
+}
+.btn_001 .text_visible.swipe {
+    left: 100%;
+    animation: .4s swipe_visible_text_left forwards;
+    animation-timing-function: linear;
+    animation-delay: .4s;
+}
+.btn_001 .text_hidden.swiped {
+    animation: .4s swipe_hidden_text_right forwards;
+    animation-timing-function: linear;
+    animation-delay: .4s;
+}
+.btn_001 .text_hidden.swipe {
+    opacity: 1;
+    left: 0;
+    animation: .4s swipe_hidden_text_left forwards;
+    animation-timing-function: linear;
+    animation-delay: .4s;
+}
+
+/* Media Querys */
+/* 768px */
+@media (max-width: 768px) {
+    .orangeContainer {
+        display: none;
+    }
+    .formsContainer .left,
+    .formsContainer .right {
+        width: 100%;
+    }
+    .mobile_swipe_screen,
+    .mobile_powered_by {
+        display: block;
+    }
+}

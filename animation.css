@@ -1,0 +1,263 @@
+/* Show Website (Like Preloader) */
+@keyframes showMainLogin {
+    0% {
+        clip-path: circle(0% at 50% 50%);
+        opacity: .5;
+    }
+    90% {
+        clip-path: circle(100% at 50% 50%);
+    }
+    100% {
+        clip-path: none;
+    }
+}
+
+/* Orange Background Animation */
+@keyframes bgPositionOrangeContainer {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 800px 0;
+    }
+}
+
+/* Swipe Screen Animations */
+@keyframes container_swipe_to_login {
+    0% {
+        clip-path: inset(0 60% 0 0 round 0);
+    }
+    30% {
+        clip-path: inset(0 40% 0 0% round 0);
+    }
+    100% {
+        clip-path: inset(0 0% 0 60% round 0);
+    }
+}
+
+@keyframes container_swipe_to_back {
+    0% {
+        clip-path: inset(0 0% 0 60% round 0);
+    }
+    30% {
+        clip-path: inset(0 0% 0 40% round 0);
+    }
+    100% {
+        clip-path: inset(0 60% 0 0 round 0);
+    }
+}
+
+@keyframes button_container_swip_to_login {
+    0% {
+        left: 0;
+    }
+    30% {
+        left: 18%;
+    }
+    100% {
+        left: 60%;
+    }
+}
+
+@keyframes button_container_swip_to_back {
+    0% {
+        left: 60%;
+    }
+    30% {
+        left: 42%;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes button_swip_to_login {
+    0% {
+        max-width: 250px;
+    }
+    30% {
+        max-width: 90%;
+        box-shadow: -15px 0 0px rgba(0, 0, 0, .5);
+    }
+    50% {
+        transform: translateX(-40%);
+    }
+    80% {
+        box-shadow: -10px 0 0px rgba(0, 0, 0, .5);
+    }
+    100% {
+        max-width: 250px;
+    }
+}
+
+@keyframes button_swip_to_back {
+    0% {
+        max-width: 250px;
+    }
+    30% {
+        max-width: 90%;
+        box-shadow: 15px 0 0px rgba(0, 0, 0, .5);
+    }
+    50% {
+        transform: translateX(40%);
+    }
+    80% {
+        box-shadow: 10px 0 0px rgba(0, 0, 0, .5);
+    }
+    100% {
+        max-width: 250px;
+    }
+}
+
+@keyframes swipe_visible_text_right {
+    0% {
+        left: 0;
+        opacity: 1;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+@keyframes swipe_visible_text_left {
+    0% {
+        left: 100%;
+        opacity: 0;
+    }
+    60% {
+        opacity: 0;
+    }
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes swipe_hidden_text_right {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes swipe_hidden_text_left {
+    0% {
+        left: 0;
+        opacity: 1;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        left: -100%;
+        opacity: 0;
+    }
+}
+
+@keyframes showToRight {
+    0% {
+        opacity: 0;
+        margin-left: -400px;
+    }
+    100% {
+        opacity: 1;
+        margin-left: 0;
+    }    
+}
+
+@keyframes hideTextToRight {
+    0% {
+        opacity: 1;
+        margin-left: 0;
+    }
+    100% {
+        opacity: 0;
+        margin-left: 400px;
+    }   
+}
+
+@keyframes hideTextToLeft {
+    0% {
+        opacity: 1;
+        margin-left: 0;
+    }
+    100% {
+        opacity: 0;
+        margin-left: -400px;
+    }
+}
+
+@keyframes showTextToLeft {
+    0% {
+        opacity: 0;
+        margin-left: 400px;
+    }
+    100% {
+        opacity: 1;
+        margin-left: 0;
+    }
+}
+
+/* Swipe Forms Animations */
+@keyframes showLoginForm {
+    0% {
+        opacity: 0;
+        visibility: visible;
+        left: 300px;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+        left: 0;
+    }
+}
+
+@keyframes hideLoginForm {
+    0% {
+        opacity: 1;
+        visibility: visible;
+        left: 0;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+        left: 300px;
+    }
+}
+
+@keyframes showAccessRequestForm {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+        right: 300px;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+        right: 0;
+    }
+}
+
+@keyframes hideAccessRequestForm {
+    0% {
+        opacity: 1;
+        visibility: visible;
+        right: 0;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+        right: 300px;
+    }
+}
