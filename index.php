@@ -1,19 +1,24 @@
+<?php
+if ( !file_exists('config.php') ) {
+    echo 'É necessário configurar o script';
+    exit();
+}
+
+require_once 'config.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Feira City Login</title>
-        <link rel="stylesheet" href="css/style.css" />
-        <link rel="stylesheet" href="css/animation.css" />
-        <link rel="stylesheet" href="css/remixicon.css" />
-        <link rel="stylesheet" href="litenotify/litenotify.css" />
+        <link rel="stylesheet" href="<?php echo LOGIN_URL; ?>/css/style.css" />
+        <link rel="stylesheet" href="<?php echo LOGIN_URL; ?>/css/animation.css" />
+        <link rel="stylesheet" href="<?php echo LOGIN_URL; ?>/css/remixicon.css" />
+        <link rel="stylesheet" href="<?php echo LOGIN_URL; ?>/litenotify/litenotify.css" />
 
         <script
-            src="https://www.google.com/recaptcha/api.js"
-            async
-            defer
-        ></script>
+            src="https://www.google.com/recaptcha/api.js" async defer></script>
     </head>
     <body>
         <section class="mainLogin">
@@ -23,7 +28,7 @@
                 <div class="left">
                     <!-- Mensagem Hello -->
                     <div class="welcome">
-                        <img src="img/logo_fc.png" alt="Logo" />
+                        <img src="<?php echo LOGIN_URL; ?>/img/logo_fc.png" alt="Logo" />
                         <h1>Bem vindo!</h1>
                         <p>
                             Para fazer Login, <br />
@@ -65,7 +70,7 @@
                             <i class="ri-mail-send-line"></i>
                             <input
                                 type="email"
-                                name="nac_auth_email"
+                                name="auth_email"
                                 placeholder="Email"
                                 autocomplete="one-time-code"
                             />
@@ -76,7 +81,7 @@
                             <i class="ri-lock-line"></i>
                             <input
                                 type="password"
-                                name="nac_auth_password"
+                                name="auth_password"
                                 placeholder="Senha"
                                 autocomplete="one-time-code"
                             />
@@ -89,7 +94,7 @@
                         <button
                             type="submit"
                             class="g-recaptcha"
-                            data-sitekey="6LfZZSYpAAAAAC2isuq3ViOP2cvs7yy814bwm5z-"
+                            data-sitekey="<?php echo RECAPTCHA_PUBLIC_KEY; ?>"
                             data-callback="onSubmit"
                             data-action="submit"
                             id="login-button"
@@ -102,7 +107,7 @@
                 <div class="left">
                     <h2>Registrar-se</h2>
                     <a
-                        href="https://feiracitymarketplace.com.br/cadastro/"
+                        href="<?php echo SITE_URL; ?>/cadastro/"
                         id="register"
                     ></a>
                 </div>
@@ -115,7 +120,13 @@
         ></script>
 
         <!-- Scripts -->
-        <script src="litenotify/litenotify.js"></script>
-        <script src="js/js.js"></script>
+        <script>
+            let js_global = {
+                wp_ajax: "<?php echo SITE_URL; ?>/wp-admin/admin-ajax.php",
+                site_url: "<?php echo SITE_URL; ?>",
+            };
+        </script>
+        <script src="<?php echo LOGIN_URL; ?>/litenotify/litenotify.js"></script>
+        <script src="<?php echo LOGIN_URL; ?>/js/js.js"></script>
     </body>
 </html>

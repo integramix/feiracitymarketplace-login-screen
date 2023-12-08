@@ -126,16 +126,8 @@ function onSubmit(token) {
     jQuery("#login-form").submit();
 }
 
-let js_global = {
-    wp_ajax: "https://feiracitymarketplace.com.br/wp-admin/admin-ajax.php",
-    site_url: "https://feiracitymarketplace.com.br",
-};
-
 jQuery("#login-form").on("submit", (event) => {
     event.preventDefault();
-
-    console.log("???");
-    console.log("???");
 
     jQuery("#login-button").prop("disabled", true);
 
@@ -159,7 +151,7 @@ jQuery("#login-form").on("submit", (event) => {
         success: function (response) {
             if (response.success) {
                 window.location.href =
-                    "https://feiracitymarketplace.com.br/cadastrados/";
+                    js_global.site_url + "/cadastrados/";
             }
             if (response.success === 0) {
                 jQuery("#login-button").prop("disabled", false);
