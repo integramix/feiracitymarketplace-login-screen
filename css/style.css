@@ -63,7 +63,7 @@ a {
 
 /* Orange Container */
 .orangeContainer {
-    background: url(img/bg.png);
+    background: url(../img/bg.png);
     width: 100%;
     height: 100%;
     position: absolute;
@@ -204,8 +204,7 @@ a {
 }
 
 /* Forms */
-.formsContainer {
-}
+
 .formsContainer .left {
     width: 60%;
     height: 100%;
