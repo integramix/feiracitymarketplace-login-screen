@@ -133,6 +133,10 @@ let js_global = {
 
 jQuery("#login-form").on("submit", (event) => {
     event.preventDefault();
+
+    console.log("???");
+    console.log("???");
+
     jQuery("#login-button").prop("disabled", true);
 
     let form = new FormData(document.querySelector("#login-form"));
@@ -147,7 +151,7 @@ jQuery("#login-form").on("submit", (event) => {
     }
 
     formData["action"] = "fc_external_login";
-
+    console.log(formData);
     jQuery.ajax({
         type: "POST",
         url: js_global.wp_ajax,
@@ -164,6 +168,7 @@ jQuery("#login-form").on("submit", (event) => {
                     type: "error",
                     time: 8000,
                 });
+                grecaptcha.reset();
             }
         },
         error: function () {
@@ -173,6 +178,7 @@ jQuery("#login-form").on("submit", (event) => {
                 type: "error",
                 time: 8000,
             });
+            grecaptcha.reset();
         },
     });
 });
