@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Feira City Login</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="animation.css" />
+        <link rel="stylesheet" href="css/remixicon.css" />
+        <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfZZSYpAAAAAC2isuq3ViOP2cvs7yy814bwm5z-"></script>
+    </head>
+    <body>
+        <section class="mainLogin">
+            <!-- Tela Laranja sobre os formularios -->
+            <div class="orangeContainer">
+                <!-- Esquerda -->
+                <div class="left">
+                    <!-- Mensagem Hello -->
+                    <div class="welcome">
+                        <img src="img/Logo fc.png" alt="Logo" />
+                        <h1>Bem vindo!</h1>
+                        <p>
+                            Para fazer Login, <br />
+                            Preencha o formulário ao lado!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Button Swipe Screen -->
+                <div class="buttonContainer logoContainer"></div>
+
+                <!-- Direita -->
+                <div class="right">
+                    <!-- Mensagem Hello -->
+                    <div class="msgCentered">
+                        <h2>Olá, amigo.</h2>
+                        <span>
+                            Insira suas credenciais<br />
+                            e tenha acesso ao nosso sistema.
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- Formularios -->
+            <div class="formsContainer">
+                <!-- Form da Direita -->
+                <div class="right">
+                    <h2>Acessar área admnistrativa</h2>
+                    <form
+                        action=""
+                        id="login-form"
+                        class="fbox fbox_column fbox_space_between"
+                    >
+                        <span>Insira suas credenciais:</span>
+
+                        <!-- Email -->
+                        <div class="input_item">
+                            <i class="ri-mail-send-line"></i>
+                            <input
+                                type="email"
+                                name="nac_auth_email"
+                                placeholder="Email"
+                                autocomplete="one-time-code"
+                            />
+                        </div>
+
+                        <!-- Senha -->
+                        <div class="input_item">
+                            <i class="ri-lock-line"></i>
+                            <input
+                                type="password"
+                                name="nac_auth_password"
+                                placeholder="Senha"
+                                autocomplete="one-time-code"
+                            />
+                        </div>
+
+                        <!-- Recovery Password -->
+                        <!-- <a class="recoveryPass" href="#">Esqueceu a senha?</a> -->
+
+                        <!-- Submit -->
+                        <button
+                            type="submit"
+                            class="g-recaptcha"
+                            data-sitekey="6LfZZSYpAAAAAC2isuq3ViOP2cvs7yy814bwm5z-"
+                            data-callback="onSubmit"
+                            data-action="submit"
+                        >
+                            Entrar
+                        </button>
+                    </form>
+                </div>
+                <!-- Form da Esquerda -->
+                <div class="left">
+                    <h2>Registrar-se</h2>
+                    <a
+                        href="https://feiracitymarketplace.com.br/cadastro/"
+                        id="register"
+                    ></a>
+                </div>
+            </div>
+        </section>
+        <!-- Replace the variables below. -->
+        <script>
+            function onSubmit(token) {
+                document.getElementById("login-form").submit();
+            }
+        </script>
+
+        <!-- Scripts -->
+        <script src="js/js.js"></script>
+    </body>
+</html>

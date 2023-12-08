@@ -1,12 +1,12 @@
 /* Fontes */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;900&display=swap");
 
 /* Variaveis */
 :root {
-    --font-family-1: 'Roboto', 'Arial', 'sans-serif';
-    --orange: #f7a62e;
+    --font-family-1: "Roboto", "Arial", "sans-serif";
+    --orange: #e81c23;
     --white: #fff;
-    --transition: all .5s ease;
+    --transition: all 0.5s ease;
 }
 
 /* CSS RESET */
@@ -77,15 +77,44 @@ a {
     animation: 20s infinite bgPositionOrangeContainer linear;
 }
 .orangeContainer.login_screen {
-    animation: .8s container_swipe_to_login forwards linear, 20s infinite bgPositionOrangeContainer linear;
+    animation: 0.8s container_swipe_to_login forwards linear,
+        20s infinite bgPositionOrangeContainer linear;
 }
 .orangeContainer.ra_screen {
-    animation: .8s container_swipe_to_back forwards linear, 20s infinite bgPositionOrangeContainer linear;
+    animation: 0.8s container_swipe_to_back forwards linear,
+        20s infinite bgPositionOrangeContainer linear;
 }
 .orangeContainer .left {
     width: 40%;
     height: 100%;
     position: relative;
+}
+.welcome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+
+.welcome h1 {
+    font-size: 44px;
+    margin: 0;
+    margin-top: -4px;
+    padding: 0;
+}
+
+.welcome p {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    line-height: 18px;
+    margin: 0;
+    padding: 0;
 }
 .msgCentered {
     width: 250px;
@@ -97,24 +126,24 @@ a {
     color: var(--white);
 }
 .left .msgCentered.swiped {
-    animation: .4s hideTextToLeft forwards;
+    animation: 0.4s hideTextToLeft forwards;
 }
 .left .msgCentered.swipe {
     opacity: 0;
     margin-left: -400px;
-    animation: .4s showToRight forwards;
-    animation-delay: .6s;
+    animation: 0.4s showToRight forwards;
+    animation-delay: 0.6s;
 }
 .right .msgCentered {
     opacity: 0;
     margin-right: -400px;
 }
 .right .msgCentered.swiped {
-    animation: .4s hideTextToRight forwards;
+    animation: 0.4s hideTextToRight forwards;
 }
 .right .msgCentered.swipe {
-    animation: .4s showTextToLeft forwards;
-    animation-delay: .6s;
+    animation: 0.4s showTextToLeft forwards;
+    animation-delay: 0.6s;
 }
 .msgCentered h2 {
     font-size: 40px;
@@ -137,12 +166,16 @@ a {
     margin-top: 60px;
     z-index: 1;
 }
+.logoContainer a img {
+    margin: 0 auto;
+    width: fit-content;
+}
 .buttonContainer.login_screen {
-    animation: .8s button_container_swip_to_login forwards;
+    animation: 0.8s button_container_swip_to_login forwards;
     animation-timing-function: linear;
 }
 .buttonContainer.ra_screen {
-    animation: .8s button_container_swip_to_back forwards;
+    animation: 0.8s button_container_swip_to_back forwards;
     animation-timing-function: linear;
 }
 .orangeContainer .right {
@@ -172,7 +205,6 @@ a {
 
 /* Forms */
 .formsContainer {
-
 }
 .formsContainer .left {
     width: 60%;
@@ -188,11 +220,11 @@ a {
     visibility: hidden;
 }
 .formsContainer .left.visible {
-    animation: .8s showLoginForm forwards;
-    animation-delay: .3s;
+    animation: 0.8s showLoginForm forwards;
+    animation-delay: 0.3s;
 }
 .formsContainer .left.hidden {
-    animation: .8s hideLoginForm forwards;
+    animation: 0.8s hideLoginForm forwards;
 }
 .formsContainer .right {
     width: 60%;
@@ -209,11 +241,11 @@ a {
     opacity: 0;
     visibility: hidden;
     right: 300px;
-    animation: .8s showAccessRequestForm forwards;
-    animation-delay: .3s;
+    animation: 0.8s showAccessRequestForm forwards;
+    animation-delay: 0.3s;
 }
 .formsContainer .right.hidden {
-    animation: .8s hideAccessRequestForm forwards;
+    animation: 0.8s hideAccessRequestForm forwards;
 }
 .formsContainer h2 {
     color: var(--orange);
@@ -325,7 +357,7 @@ a {
     transition: var(--transition);
 }
 .formsContainer form button[type="submit"]:hover {
-    opacity: .5;
+    opacity: 0.5;
 }
 .mobile_swipe_screen {
     margin-top: 40px;
@@ -378,12 +410,12 @@ a {
 }
 .btn_001.login_screen {
     max-width: auto;
-    animation: .8s button_swip_to_login forwards;
+    animation: 0.8s button_swip_to_login forwards;
     animation-timing-function: linear;
 }
 .btn_001.ra_screen {
     max-width: auto;
-    animation: .8s button_swip_to_back forwards;
+    animation: 0.8s button_swip_to_back forwards;
     animation-timing-function: linear;
 }
 .btn_001 .text_visible {
@@ -399,34 +431,34 @@ a {
     width: 100%;
     display: block;
     position: absolute;
-    margin-top: 2px;;
+    margin-top: 2px;
     left: -100%;
     top: 50%;
     transform: translateY(-50%);
     opacity: 0;
 }
 .btn_001 .text_visible.swiped {
-    animation: .4s swipe_visible_text_right forwards;
+    animation: 0.4s swipe_visible_text_right forwards;
     animation-timing-function: linear;
-    animation-delay: .4s;
+    animation-delay: 0.4s;
 }
 .btn_001 .text_visible.swipe {
     left: 100%;
-    animation: .4s swipe_visible_text_left forwards;
+    animation: 0.4s swipe_visible_text_left forwards;
     animation-timing-function: linear;
-    animation-delay: .4s;
+    animation-delay: 0.4s;
 }
 .btn_001 .text_hidden.swiped {
-    animation: .4s swipe_hidden_text_right forwards;
+    animation: 0.4s swipe_hidden_text_right forwards;
     animation-timing-function: linear;
-    animation-delay: .4s;
+    animation-delay: 0.4s;
 }
 .btn_001 .text_hidden.swipe {
     opacity: 1;
     left: 0;
-    animation: .4s swipe_hidden_text_left forwards;
+    animation: 0.4s swipe_hidden_text_left forwards;
     animation-timing-function: linear;
-    animation-delay: .4s;
+    animation-delay: 0.4s;
 }
 
 /* Media Querys */
@@ -442,5 +474,10 @@ a {
     .mobile_swipe_screen,
     .mobile_powered_by {
         display: block;
+    }
+    .formsContainer h2 {
+        padding: 0 16px;
+        text-align: center;
+        font-size: 24px;
     }
 }
