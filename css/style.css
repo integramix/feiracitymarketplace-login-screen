@@ -355,6 +355,11 @@ a {
     cursor: pointer;
     transition: var(--transition);
 }
+
+.formsContainer form button[type="submit"]:disabled {
+    background: #aaa;
+}
+
 .formsContainer form button[type="submit"]:hover {
     opacity: 0.5;
 }
